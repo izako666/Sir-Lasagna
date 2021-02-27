@@ -26,9 +26,11 @@ public class SpawnerManager : Manager
 
     public void spawn(GameObject obj) {
 
-        Instantiate(obj);
-        obj.GetComponent<EntityManager>().onBirth();
-        obj.transform.position = this.getObject().transform.position;
+        GameObject newObj = Instantiate(obj);
+        newObj.name = newObj.name + Random.Range(1, 99999).ToString();
+        newObj.transform.position = this.getObject().transform.position;
+        newObj.GetComponent<EntityManager>().onBirth();
+        newObj.GetComponent<EntityManager>().setBehaviourParams();
 
 
     }

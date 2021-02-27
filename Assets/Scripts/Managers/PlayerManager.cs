@@ -43,4 +43,8 @@ public class PlayerManager : EntityManager
         
     }
 
+    public override string getName()
+    {
+        return "lasagna";
+    }
 }

@@ -10,4 +10,9 @@ public abstract class Manager : MonoBehaviour
 
     public abstract void onDeath();
     public abstract EntityStats getStats();
+
+    private void Start()
+    {
+        this.onBirth();
+    }
 }
